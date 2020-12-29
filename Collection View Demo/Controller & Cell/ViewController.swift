@@ -48,7 +48,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let screenWidth = self.view.frame.size.width
-        let itemSize = (screenWidth / 2) - 15
+        var itemSize = (screenWidth / 2) - 15
+        if UIDevice.current.name == "iPad Air (3rd generation)"
+        {
+            itemSize = (screenWidth / 3) - 15
+        }
         return CGSize(width: itemSize, height: itemSize + 50)
         
     }
